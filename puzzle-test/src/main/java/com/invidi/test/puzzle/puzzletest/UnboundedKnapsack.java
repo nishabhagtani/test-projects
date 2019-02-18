@@ -5,16 +5,21 @@ import java.text.NumberFormat;
 public class UnboundedKnapsack {
 	 
     protected Item []  items = {
-                               new Item("Acme", 200,  2000000),
+                               /*new Item("Acme", 200,  2000000),
                                new Item("Lorem"  , 400,  3500000),
                                new Item("Ipsum"   , 210,  2300000),
                                new Item("Dolor"   , 730,  8000000),
                                new Item("SIT"   , 1000,  10000000),
                                new Item("Amet"   , 160,  1500000),
-                               new Item("Mauris"   , 100,  1000000)
+                               new Item("Mauris"   , 100,  1000000)*/
+                               new Item("Acme" , 0,  1),
+                              	new Item("Lorem" , 2,  2),
+                              	new Item("Ipsum" , 2,  3),
+                              	new Item("Dolor" , 71000,  70000),
+                              	new Item("Mauris",50000000,49000000)
                                };
     protected final int    n = items.length; // the number of items
-    protected Item      sack = new Item("sack" , 0, 32356000);
+    protected Item      sack = new Item("sack" , 0, 50000000);
     protected Item      best = new Item("best" , 0,  0);
     protected int  []  maxIt = new int [n];  // maximum number of items
     protected int  []    iIt = new int [n];  // current indexes of items
@@ -56,7 +61,7 @@ public class UnboundedKnapsack {
             if (item < n-1) {
                 calcWithRecursion(item+1);
             } else {
-                int    currVal = 0;   // current value
+                int currVal = 0;   // current value
                 int currWei = 0; // current weight
                 //double currVol = 0.0; // current Volume
                 for (int j = 0; j < n; j++) {
